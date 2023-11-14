@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+.container{
+    width:60%;
+    margin-top: 15%;
+    background-image: url(../../assets/bc.jpg);
+    background-position: left;
+    background-size:auto;
+    background-repeat: no-repeat;
+    color: rgb(7, 32, 3);
+    padding: 15px;
+    border: 4px solid white;
+    border-radius: 15px;
+    font-family: Agbalumo;
+    font-size: 15px; ;
+}

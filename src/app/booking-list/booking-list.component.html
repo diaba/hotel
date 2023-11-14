@@ -1,0 +1,19 @@
+<div *ngIf="bookings" class="bookings row">
+  <div class="card" *ngFor="let booking of bookings">
+    <h1>{{booking.bookingId}}</h1>
+    <div class="description">
+      <h2>{{ booking.startDate }}</h2>
+      <h4>{{booking.endDate}}</h4>
+      Number of rooms {{booking.noOfRooms}}
+      <p>Number of people {{ booking.noOfPersons}}</p>
+      <p>Type of room {{ booking.typeOfRoom }}</p>
+      <button type="button" class="btn btn-warning">Add Review</button>
+      <br>
+      <button type="button" class="btn btn-warning">View Review</button>
+      <br>
+    </div>
+  </div>
+</div>
+<div *ngIf="!bookings">
+  No bookings available
+</div>

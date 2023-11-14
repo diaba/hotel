@@ -1,0 +1,36 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-12">
+      <form [formGroup]="loginForm" class="dark">
+        <div>
+          <p for="name" class="label">Name</p>
+          <input type="text" name="" id="userId" formControlName="userId" class="form-control">
+          <div *ngIf="loginForm.get('userId')?.touched && loginForm.get('userId')?.invalid">
+            <span class="errorMessage">userId is required</span>
+          </div>
+        </div>
+
+        <div>
+          <p for="password" class="label">Password</p>
+          <input type="password" name="" id="password" formControlName="password" class="form-control">
+          <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+            <span class="errorMessage">Password is required</span>
+          </div>
+        </div>
+        <br>
+        <div>
+          <button value="login" (click)="login()" class="btn btn-default btn-outline">
+            Login</button>
+        </div>
+        <br>
+        <p @if(errorMessage) class="alert alert-danger">{{errorMessage}}</p>
+        <div>
+          <a [routerLink]="['/register']">Sign up</a> with a new account.
+        </div>
+        <br>
+      </form>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

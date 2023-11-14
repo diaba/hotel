@@ -1,0 +1,23 @@
+<div *ngIf="hotels">
+  <div class="hotel" *ngFor="let hotel of hotels">
+    <div class="image">
+      <img src="../assets/{{hotel.imageUrl}}" width="150" height="150"
+        class="img-responsive border-3 border-warning border rounded-circle p-1" alt="hotel.name">
+    </div>
+    <div class="description">
+      <h2>{{ hotel.hotelName }}</h2>
+      <h4>{{hotel.city}}</h4>
+      {{hotel.description}}
+      <p>Address: {{ hotel.address}}</p>
+      <p>Contact Number: {{ hotel.phoneNo }}</p>
+    </div>
+    <div class="action">
+      <button type="button" class="btn btn-warning"  (click)="booking(hotel)">Book A Room</button>
+      <button type="button" class="btn btn-warning">Add Review</button>
+      <button type="button" class="btn btn-warning">View Review</button>
+    </div>
+  </div>
+</div>
+<div *ngIf="!hotels">
+  No hotels available
+</div>

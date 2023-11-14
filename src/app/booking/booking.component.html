@@ -1,0 +1,52 @@
+<div class="container">
+
+  <div class="row">
+    <h1 class="text-center ">Book a Room</h1>
+    <div class="col-12">
+      <form [formGroup]="scheduleForm" class="dark">
+        <div>
+          <label for=" startDate" class="label">Start Date</label>
+          <input type="date" name="" id="startDate" formControlName="startDate" class="form-control">
+          <div *ngIf="scheduleForm.get('startDate')?.touched && scheduleForm.get('startDate')?.invalid">
+            <span class="errorMessage">Start is Date required</span>
+          </div>
+        </div>
+        <div>
+          <label for="endDate" class="label">End Date</label>
+          <input type="date" name="" id="endDate" formControlName="endDate" class="form-control">
+          <div *ngIf="scheduleForm.get('endDate')?.touched && scheduleForm.get('endDate')?.invalid">
+            <span class="errorMessage">End is Date required</span>
+          </div>
+        </div>
+        <div>
+          <label for="noOfPersons" class="label">No Of Persons</label>
+          <input type="number" name="" id="noOfPersons" formControlName="noOfPersons" class="form-control">
+          <div *ngIf="scheduleForm.get('noOfPersons')?.touched && scheduleForm.get('noOfPersons')?.invalid">
+            <span class="errorMessage">No of persons required</span>
+          </div>
+        </div>
+        <div>
+          <label for="noOfRooms" class="label">No Of Rooms</label>
+          <input type="number" name="" id="noOfRooms" formControlName="noOfRooms" class="form-control">
+            <div *ngIf="scheduleForm.get('noOfRooms')?.touched && scheduleForm.get('noOfRooms')?.invalid">
+              <span class="errorMessage">No of rooms required</span>
+            </div>
+        </div>
+        <div>
+          <label for="TypeOfRoom" class="label">Type Of Room</label>
+          <input type="text" name="" id="TypeOfRoom" formControlName="TypeOfRoom" class="form-control">
+        </div>
+        <br>
+        <div>
+          <button type="button" value="Book" (hotelSelected)="hotel"          (click)="book()" class="btn btn-default btn-outline">
+            Book</button>
+        </div>
+        <br>
+        <p class="text-danger">{{errorMessage}}</p>
+        <p class="text-success">{{successMessage}}</p>
+        <br>
+      </form>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

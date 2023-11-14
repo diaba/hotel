@@ -1,0 +1,11 @@
+.ng-dirty.ng-invalid:not(form) {
+  border: 3px solid #a94442;
+}
+
+.ng-dirty.ng-invalid:not(form):focus {
+  border: 3px solid #a94442;
+}
+
+.ng-dirty.ng-valid:not(form) {
+  border: 3px solid #56b91c;
+}

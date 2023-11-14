@@ -1,0 +1,53 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-6 hero">
+      <h1>Welcome to Shavi Hotel</h1>
+    </div>
+    <div class="col-6">
+      <form [formGroup]="loginForm" class="dark">
+        <div>
+          <label for="name" class="label">Name</label>
+          <input type="text" name="" id="name" formControlName="name" class="form-control">
+
+          <span *ngIf="loginForm.get('name')?.touched && loginForm.get('name')?.invalid" class="text-danger">Please
+            should be more than 3 char
+          </span>
+
+        </div>
+        <div>
+          <label for="address" class="label">Address</label>
+          <input type="text" name="" id="address" formControlName="address" class="form-control">
+        </div>
+        <div>
+          <label for="phoneNo" class="label">Phone No</label>
+          <input type="number" name="" id="phoneNo" formControlName="phoneNo" class="form-control">
+        </div>
+        <div>
+          <label for="email" class="label">Email Id</label>
+          <input type="email" name="" id="email" formControlName="email" class="form-control">
+          <span *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid" class="text-danger">Please
+            enter a valid email address
+          </span>
+        </div>
+        <div>
+          <label for="password" class="label">Password</label>
+          <input type="text" name="" id="password" formControlName="password" class="form-control">
+        </div>
+        <br>
+        <div>
+          <button value="Register" (click)="register()" class="btn btn-default btn-outline">
+            Register</button>
+        </div>
+        <br>
+        <div>
+          <a [routerLink]="['/login']">Login</a> with your existing account.
+        </div>
+        <br>
+        <div class="text-success" *ngIf="successMessage">{{successMessage}}</div>
+        <div class="text-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+      </form>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
